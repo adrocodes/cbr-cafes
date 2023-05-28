@@ -1,1 +1,4 @@
 public/db
+public/vendor
+
+.env*
