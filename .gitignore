@@ -1,4 +1,4 @@
-public/db
+public/db/*.sqlite3
 public/vendor
 
-.env*
+.env
