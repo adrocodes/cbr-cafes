@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ./public:/cbr-cafes/public
+    depends_on:
+      - php
+    restart: always
+  php:
+    build:
+      context: .
+      dockerfile: PHP.Dockerfile
+    volumes:
+      - ./public:/cbr-cafes/public
+    restart: always
